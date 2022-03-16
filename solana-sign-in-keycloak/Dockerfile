@@ -14,7 +14,7 @@ WORKDIR keycloak-${KEYCLOAK_VERSION}
 # add admin user
 RUN ./bin/add-user-keycloak.sh -u admin -p admin --realm master
 # add default user
-RUN ./bin/add-user-keycloak.sh -u Ej5zJzej7rrUoDngsJ3jcpfuvfVyWpcDcK7uv9cE2LdL -p redundant --realm master
+RUN ./bin/add-user-keycloak.sh -u FLwEU3qyKWJ7PbPphpXsStjmMHRcdHkif9weotiG2bqZ -p redundant --realm master
 RUN ./bin/add-user-keycloak.sh -u 3U9LcJxit7XKcK8f8TX77EhamgvdhXdzu7U4351GPPKj -p redundant --realm master
 
 COPY target/simple-authenticator.jar standalone/deployments
