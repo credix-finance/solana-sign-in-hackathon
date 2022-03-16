@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="Hibernate" />
+        <datasource-mapping>
+          <factory-entry name="solana-sign-in-bff" />
+        </datasource-mapping>
+        <naming-strategy-map />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/annotations" isTestSource="false" generated="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="J2EE 1.4-J2EE 1.4" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-inject:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.29" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.inject:jakarta.inject-api:2.0.1" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-core:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.30" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-validation:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-core-reactive:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.3" level="project" />
+    <orderEntry type="library" name="Maven: javax.validation:validation-api:2.0.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:3.4.14" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.security:micronaut-security:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-http:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-http-server:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-router:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.security:micronaut-security-annotations:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.security:micronaut-security-oauth2:3.4.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.security:micronaut-security-jwt:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: com.nimbusds:nimbus-jose-jwt:9.15.2" level="project" />
+    <orderEntry type="library" name="Maven: com.github.stephenc.jcip:jcip-annotations:1.0-1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-api:5.7.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.opentest4j:opentest4j:1.2.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-commons:1.7.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.7.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.7.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.micronaut.test:micronaut-test-junit5:3.0.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.micronaut.test:micronaut-test-core:3.0.5" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-http-client:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-http-client-core:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-websocket:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-http-netty:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-buffer-netty:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-http2:4.1.73.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.73.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-resolver:4.1.73.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-tcnative-classes:2.0.46.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-handler-proxy:4.1.73.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.73.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.73.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.73.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec:4.1.73.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-socks:4.1.73.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-http-server-netty:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-http:4.1.73.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-jackson-databind:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-jackson-core:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-json-core:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.12.4" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.12.4" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.12.4" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.12.4" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.4" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-runtime:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-aop:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut:micronaut-context:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.sql:micronaut-hibernate-jpa:4.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:5.5.9.Final" level="project" />
+    <orderEntry type="library" name="Maven: javax.persistence:javax.persistence-api:2.2" level="project" />
+    <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.11.12" level="project" />
+    <orderEntry type="library" name="Maven: antlr:antlr:2.7.7" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss:jandex:2.2.3.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml:classmate:1.5.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:javax.activation-api:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.1.2.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish.jaxb:txw2:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.istack:istack-commons-runtime:3.0.7" level="project" />
+    <orderEntry type="library" name="Maven: org.jvnet.staxex:stax-ex:1.8" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.transaction:jakarta.transaction-api:1.3.3" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.data:micronaut-data-tx-hibernate:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.data:micronaut-data-tx:3.2.2" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.sql:micronaut-jdbc:4.1.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.xml.bind:jaxb-api:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.sql:micronaut-jdbc-hikari:4.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.h2database:h2:1.4.200" level="project" />
+    <orderEntry type="library" name="Maven: javax.annotation:javax.annotation-api:1.3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-graalvm:5.4.12.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.annotation:jakarta.annotation-api:2.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: ch.qos.logback:logback-classic:1.2.10" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: ch.qos.logback:logback-core:1.2.10" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.reactor:micronaut-reactor:2.1.1" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.reactor:micronaut-reactor-http-client:2.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.rxjava2:micronaut-rxjava2-http-client:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: io.micronaut.rxjava2:micronaut-rxjava2:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: io.reactivex.rxjava2:rxjava:2.2.10" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.graalvm.sdk:graal-sdk:22.0.0.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.graalvm.nativeimage:svm:22.0.0.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.graalvm.nativeimage:objectfile:22.0.0.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.graalvm.nativeimage:pointsto:22.0.0.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.graalvm.compiler:compiler:22.0.0.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.graalvm.truffle:truffle-api:22.0.0.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.graalvm.nativeimage:native-image-base:22.0.0.2" level="project" />
+  </component>
+</module>

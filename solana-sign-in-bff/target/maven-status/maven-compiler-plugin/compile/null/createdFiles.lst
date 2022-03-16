@@ -1,0 +1,10 @@
+finance/credix/auth/$KeycloakUserDetailsMapper$Definition.class
+finance/credix/auth/KeycloakUserDetailsMapper.class
+META-INF/native-image/finance.credix/solana-sign-in/reflect-config.json
+META-INF/services/io.micronaut.inject.BeanDefinitionReference
+finance/credix/auth/$KeycloakUser$Introspection.class
+finance/credix/auth/$KeycloakUserDetailsMapper$Definition$Reference.class
+finance/credix/auth/KeycloakUser.class
+META-INF/services/io.micronaut.core.beans.BeanIntrospectionReference
+finance/credix/Application.class
+finance/credix/auth/$KeycloakUser$IntrospectionRef.class

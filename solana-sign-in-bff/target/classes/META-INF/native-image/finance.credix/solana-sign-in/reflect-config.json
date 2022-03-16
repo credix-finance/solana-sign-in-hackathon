@@ -1,0 +1,6 @@
+[ {
+  "name" : "finance.credix.auth.KeycloakUserDetailsMapper",
+  "fields" : [ {
+    "name" : "client"
+  } ]
+} ]
