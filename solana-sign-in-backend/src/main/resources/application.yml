@@ -6,7 +6,7 @@ micronaut:
   application:
     name: solanaSignIn
   security:
-    authentication: bearer
+    authentication: cookie
     endpoints:
       login:
         enabled: false
