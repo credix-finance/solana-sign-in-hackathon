@@ -50,7 +50,6 @@ class KeycloakUserDetailsMapper implements OauthAuthenticationMapper {
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                         .basicAuth(clientId, clientSecret), KeycloakUser.class);
         return res.map(user -> {
-            System.out.println(user.body());
             String identity = user.body().getUsername();
 //
 //            if (userRepository.findByPublicKey(identity).isEmpty()) {

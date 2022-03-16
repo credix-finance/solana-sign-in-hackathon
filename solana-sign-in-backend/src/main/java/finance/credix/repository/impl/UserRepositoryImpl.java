@@ -66,12 +66,13 @@ public class UserRepositoryImpl implements UserRepository {
 	@Override
 	@Transactional
 	@TransactionalAdvice
-	public void update(UUID id, User user) {
+	public User update(UUID id, User user) {
 		User userToUpdate = entityManager.find(User.class, id);
 		if (userToUpdate != null) {
 			userToUpdate.setFirstName(user.getFirstName());
 			userToUpdate.setLastName(user.getLastName());
 			userToUpdate.setEmail(user.getEmail());
+			return userToUpdate;
 		} else {
 			throw new RuntimeException("No such user available.");
 		}

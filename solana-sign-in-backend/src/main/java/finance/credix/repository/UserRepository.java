@@ -17,5 +17,5 @@ public interface UserRepository {
 
 	List<User> findAll();
 
-	void update(UUID id, User user);
+	User update(UUID id, User user);
 }

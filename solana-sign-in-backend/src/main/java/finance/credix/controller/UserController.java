@@ -33,20 +33,23 @@ public class UserController {
 
 	@Get("/me")
 	public Optional<User> getMe(Authentication authentication) {
-		String publicKey = authentication.getName();
-		return userRepository.findByPublicKey(publicKey);
+		String _publicKey = authentication.getAttributes().get("preferred_username").toString();
+		return userRepository.findByPublicKey(_publicKey);
 	}
 
 	@Put("/me")
-	public void updateMe(Authentication authentication, @Body User user) {
-		String publicKey = authentication.getName();
-		Optional<User> _user = userRepository.findByPublicKey(publicKey);
-		_user.ifPresent(value -> userRepository.update(value.getId(), user));
+	public User updateMe(Authentication authentication, @Body User user) {
+		String _publicKey = authentication.getAttributes().get("preferred_username").toString();
+		Optional<User> _user = userRepository.findByPublicKey(_publicKey);
+		if (_user.isPresent()) {
+			return userRepository.update(_user.get().getId(), user);
+		}
+		return user;
 	}
 
 	@Post
 	public User createUser(Authentication authentication, @Body User user) {
-		String _publicKey = authentication.getName();
+		String _publicKey = authentication.getAttributes().get("preferred_username").toString();
 		PublicKey publicKey = new PublicKey();
 		publicKey.setPublicKey(_publicKey);
 		publicKey.setUser(user);
