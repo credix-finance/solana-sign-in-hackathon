@@ -2,6 +2,10 @@
 
 ## Usage
 
+Currently we hardcoded 2 keys in keycloak.
+- `Ej5zJzej7rrUoDngsJ3jcpfuvfVyWpcDcK7uv9cE2LdL`
+- `3U9LcJxit7XKcK8f8TX77EhamgvdhXdzu7U4351GPPKj`
+
 ### Keycloak
 
 Go to the `solana-sign-in-keycloak` directory and build/run the docker container.

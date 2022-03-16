@@ -50,6 +50,11 @@ public class UserController {
 	@Post
 	public User createUser(Authentication authentication, @Body User user) {
 		String _publicKey = authentication.getAttributes().get("preferred_username").toString();
+		Optional<User> _user = userRepository.findByPublicKey(_publicKey);
+		if (_user.isPresent()) {
+			return _user.get();
+		}
+
 		PublicKey publicKey = new PublicKey();
 		publicKey.setPublicKey(_publicKey);
 		publicKey.setUser(user);

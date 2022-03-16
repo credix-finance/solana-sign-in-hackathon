@@ -35,7 +35,7 @@ public class PublicKeyController {
 
 	@Post
 	public PublicKey addPublicKey(Authentication authentication, @Body PublicKey publicKey) {
-		String _publicKey = authentication.getName();
+		String _publicKey = authentication.getAttributes().get("preferred_username").toString();
 		return publicKeyRepository.saveByPublicKey(_publicKey, publicKey);
 	}
 
