@@ -1,0 +1,46 @@
+micronaut:
+  server:
+    port: 8081
+    cors:
+      enabled: true
+  application:
+    name: solanaSignIn
+  security:
+    authentication: bearer
+    endpoints:
+      login:
+        enabled: false
+    token:
+      jwt:
+        enabled: true
+        signatures:
+          jwks:
+            keycloak:
+              url: http://127.0.0.1:8080/auth/realms/master/protocol/openid-connect/certs
+    oauth2.clients.keycloak:
+      grant-type: password
+      client-id: micronaut
+      client-secret: 9nBJEscD8gJzqsgBkYvd1dQEnpcYHblt
+      authorization:
+        url: http://127.0.0.1:8080/auth/realms/master/protocol/openid-connect/auth
+custom:
+  keycloak:
+    url: http://127.0.0.1:8080
+netty:
+  default:
+    allocator:
+      max-order: 3
+datasources:
+  default:
+    url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ""
+jpa.default.properties.hibernate.hbm2ddl.auto: update
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
