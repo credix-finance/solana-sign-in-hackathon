@@ -64,7 +64,7 @@ const Overview: NextPage = () => {
 		>
 			<div className="text-center md:col-span-12 md:max-w-3xl grid justify-items-center">
 				<h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold font-sans">
-					Hackerhouse Prague
+					Riptide Hackathon
 				</h1>
 				<Form onFinish={edit} name="bla" form={form}>
 					<Input label="first name" disabled={!editing} name="firstName" />

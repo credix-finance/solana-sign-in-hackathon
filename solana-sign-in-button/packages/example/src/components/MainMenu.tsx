@@ -15,8 +15,10 @@ export const MainMenu = () => {
 
 	const start = useCallback(async () => {
 		const user = await getUser(errorHandler(() => setLoggedIn(false)));
-		user && setUser(user);
-
+		if (user) {
+			setLoggedIn(true);
+			setUser(user);
+		}
 		setStarted(true);
 	}, [setLoggedIn, setUser]);
 
