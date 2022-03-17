@@ -7,6 +7,7 @@
 Go to the `solana-sign-in-keycloak` directory and build/run the docker container.
 
 ```sh
+./mvnw clean install
 docker build . -t keycloak
 docker run -p 8080:8080 keycloak
 ```
