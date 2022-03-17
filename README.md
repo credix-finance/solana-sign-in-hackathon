@@ -44,5 +44,6 @@ Go to the `solana-sign-in-bff` directory and run the bff. This application will 
 Go to the `solana-sign-in-frontend` directory and run the frontend.
 
 ```sh
+cd solana-sign-in-button/packages/example
 yarn dev
 ```
