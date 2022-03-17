@@ -1,22 +1,29 @@
 import { useWallet } from "@solana/wallet-adapter-react";
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
+import { Button } from "antd";
+import Icon from "@ant-design/icons";
 import axios from "axios";
 import base58 from "bs58";
 import { useCallback, useEffect, useMemo } from "react";
+import SolanaLogo from "./SolanaLogo";
 import { WalletButton } from "./WalletButton";
 
 interface Props {
 	isLoggedIn: boolean;
 	baseUrl: string;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	onSignIn: any;
+	onSignIn: (e?: any) => void;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	onSignOut: any;
 }
 
 export const SolanaSignInButton = (props: Props) => {
 	const { setVisible } = useWalletModal();
 	const wallet = useWallet();
-	const client = useMemo(() => axios.create({ baseURL: props.baseUrl }), [props.baseUrl]);
+	const client = useMemo(
+		() => axios.create({ baseURL: props.baseUrl, withCredentials: true }),
+		[props.baseUrl]
+	);
 
 	const sign = useCallback(async () => {
 		const key = wallet.publicKey;
@@ -43,20 +50,20 @@ export const SolanaSignInButton = (props: Props) => {
 		const signature = await sign();
 		const url = `${props.baseUrl}/login`;
 		const payload = {
-			address: wallet.publicKey.toString(),
-			signature: base58.encode(signature),
+			username: wallet.publicKey.toString(),
+			password: base58.encode(signature),
 		};
 
 		try {
-			const response = await client.post(url, payload);
-			props.onSignIn(null, response);
+			await client.post(url, payload);
+			props.onSignIn();
 		} catch (e) {
+			// TODO: proper error typing
 			props.onSignIn(e);
 		}
 	}, [client, sign, wallet.publicKey, props]);
 
 	const click = () => {
-		console.log("click");
 		if (!wallet.connected) {
 			setVisible(true);
 			return;
@@ -77,5 +84,20 @@ export const SolanaSignInButton = (props: Props) => {
 		return <WalletButton onDisconnect={props.onSignOut} />;
 	}
 
-	return <button onClick={click}>Sign in with Solana</button>;
+	return (
+		<Button
+			size="large"
+			onClick={click}
+			type="primary"
+			icon={<Icon component={SolanaLogo} />}
+			style={{
+				backgroundColor: "white",
+				border: "1px solid #9945FF",
+				color: "black",
+				borderRadius: "12px",
+			}}
+		>
+			Sign in with Solana
+		</Button>
+	);
 };

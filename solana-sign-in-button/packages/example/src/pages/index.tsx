@@ -1,10 +1,10 @@
 import { Button } from "@components/Button";
 import { Input } from "@components/Input";
-import { useStore } from "@components/MainMenu";
 import { Form } from "antd";
-import axios from "axios";
+import { addPublickey, errorHandler, getUser, updateUser } from "client";
 import type { NextPage } from "next";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
+import { useAuthStore, useUserStore } from "state";
 
 export interface dbPublicKey {
 	publicKey: string;
@@ -18,19 +18,10 @@ export interface User {
 
 const Overview: NextPage = () => {
 	const [editing, setEditing] = useState<boolean>(false);
-	const baseUrl = "http://127.0.0.1:8080";
-	const { accessToken, user, setUser } = useStore((state) => ({
-		user: state.user,
-		setUser: state.setUser,
-		accessToken: state.accessToken,
+	const { setLoggedIn } = useAuthStore((state) => ({
+		setLoggedIn: state.setLoggedIn,
 	}));
-	const client = useMemo(() => {
-		console.log("creating client with token", accessToken);
-		return axios.create({
-			baseURL: baseUrl,
-			headers: { Authorization: accessToken ? `Bearer ${accessToken}` : undefined },
-		});
-	}, [baseUrl, accessToken]);
+	const { user, setUser } = useUserStore((state) => ({ setUser: state.setUser, user: state.user }));
 	const [form] = Form.useForm();
 
 	useEffect(() => {
@@ -47,20 +38,24 @@ const Overview: NextPage = () => {
 			lastName: values.lastName,
 		};
 
-		const response = await client.put("/api/users/me", formUser);
-		setUser(response.data);
+		const user = await updateUser(
+			formUser,
+			errorHandler(() => setLoggedIn(false))
+		);
+
+		setUser(user);
 		setEditing(false);
 	};
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const addKey = async (values: any) => {
-		console.log(values);
-		await client.post("/api/publickeys", values);
-		const response = await client.get("/api/users/me");
-		setUser(response.data);
+		await addPublickey(
+			values,
+			errorHandler(() => setLoggedIn(false))
+		);
+		const user = await getUser(errorHandler(() => setLoggedIn(false)));
+		setUser(user);
 	};
-
-	console.log("user", user);
 
 	return (
 		<main
@@ -83,6 +78,7 @@ const Overview: NextPage = () => {
 					)}
 					{!editing && <Button onClick={() => setEditing(true)}>Edit</Button>}
 				</Form>
+
 				<div className="mt-10">
 					{user &&
 						user.publicKeys.map((k, i) => (
