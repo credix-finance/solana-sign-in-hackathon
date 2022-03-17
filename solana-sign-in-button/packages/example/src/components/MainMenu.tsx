@@ -15,7 +15,8 @@ export const MainMenu = () => {
 
 	const start = useCallback(async () => {
 		const user = await getUser(errorHandler(() => setLoggedIn(false)));
-		setUser(user);
+		user && setUser(user);
+
 		setStarted(true);
 	}, [setLoggedIn, setUser]);
 
@@ -25,7 +26,8 @@ export const MainMenu = () => {
 		}
 	}, [started, start]);
 
-	const onSignIn = async (e) => {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const onSignIn = async (e: any) => {
 		if (e) {
 			console.log(e);
 			return;
@@ -33,7 +35,7 @@ export const MainMenu = () => {
 		setLoggedIn(true);
 		await createUser(errorHandler(() => setLoggedIn(false)));
 		const user = await getUser(errorHandler(() => setLoggedIn(false)));
-		setUser(user);
+		user && setUser(user);
 	};
 
 	return (

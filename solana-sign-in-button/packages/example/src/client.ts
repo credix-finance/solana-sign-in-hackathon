@@ -8,13 +8,14 @@ export const bffClient = axios.create({
 });
 export const backendClient = axios.create({
 	baseURL: `${baseURL}:8081`,
-	withCredentials: true
+	withCredentials: true,
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const createUser = (errorHandler: any) => {
+export const createUser = async (errorHandler: any) => {
 	try {
-		return backendClient.post("/api/users", {});
+		const response = await backendClient.post<User>("/api/users", {});
+		return response.data;
 	} catch (e) {
 		errorHandler(e);
 	}
@@ -23,7 +24,7 @@ export const createUser = (errorHandler: any) => {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getUser = async (errorHandler: any) => {
 	try {
-		const response = await backendClient.get("/api/users/me");
+		const response = await backendClient.get<User>("/api/users/me");
 		return response.data;
 	} catch (e) {
 		errorHandler(e);
@@ -33,7 +34,7 @@ export const getUser = async (errorHandler: any) => {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const updateUser = async (user: Partial<User>, errorHandler: any) => {
 	try {
-		const response = await backendClient.put("/api/users/me", user);
+		const response = await backendClient.put<User>("/api/users/me", user);
 		return response.data;
 	} catch (e) {
 		errorHandler(e);
@@ -44,7 +45,7 @@ export const updateUser = async (user: Partial<User>, errorHandler: any) => {
 export const addPublickey = async (key: dbPublicKey, errorHandler: any) => {
 	try {
 		const response = await backendClient.post("/api/publickeys", {
-			publicKey: key.publicKey.toLowerCase()
+			publicKey: key.publicKey.toLowerCase(),
 		});
 		return response.data;
 	} catch (e) {

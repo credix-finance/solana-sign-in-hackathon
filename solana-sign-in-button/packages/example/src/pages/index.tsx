@@ -43,7 +43,7 @@ const Overview: NextPage = () => {
 			errorHandler(() => setLoggedIn(false))
 		);
 
-		setUser(user);
+		user && setUser(user);
 		setEditing(false);
 	};
 
@@ -54,7 +54,7 @@ const Overview: NextPage = () => {
 			errorHandler(() => setLoggedIn(false))
 		);
 		const user = await getUser(errorHandler(() => setLoggedIn(false)));
-		setUser(user);
+		user && setUser(user);
 	};
 
 	return (
