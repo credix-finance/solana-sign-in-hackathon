@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.text-shadow-none {
+		text-shadow: none;
+	}
+	.grid-auto-rows-min {
+		grid-auto-rows: min-content;
+	}
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+		Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#__next {
+	@apply grid grid-rows-layout h-full;
+}
+
+#index {
+	background-image: url(/abstract_shape.svg);
+	background-position: center;
+}
+
+/* Antdesign overrides */
+.ant-form-item-label > label {
+	/* Unset label color so it displays the correct color when disabled */
+	color: unset !important;
+	/* Unset label font size so it displays the correct size that get set on the parent */
+	font-size: unset !important;
+}
+
+.anticon-close-circle {
+	/* Don't show error icon in input fields with validation errors */
+	display: none !important;
+}
+
+.ant-slider {
+	@apply mt-0 ml-0 cursor-default !important;
+}
+.ant-slider-track {
+	@apply bg-action-primary rounded-none !important;
+}
+.ant-slider-rail {
+	@apply bg-neutral-90 rounded-none !important;
+}
+.ant-slider-handle {
+	@apply bg-action-primary border-action-primary cursor-default !important;
+}
+.ant-slider-handle:focus {
+	@apply shadow-none !important;
+}
+
+.ant-table-cell {
+	@apply bg-neutral-0 font-bold text-base !important;
+}
+
+.ant-table-pagination {
+	@apply gap-1 !important;
+}
+
+.ant-table-pagination > * {
+	@apply w-[39px] h-[36px] border-none m-0 rounded-none !important;
+}
+
+.ant-pagination-item-active a,
+.ant-pagination-item-active {
+	@apply bg-neutral-100 text-credix-primary hover:text-credix-primary !important;
+}
+
+.ant-table-thead > tr > th {
+	@apply border-b-0 !important;
+}
+
+.ant-table-thead
+	> tr
+	> th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+	@apply hidden !important;
+}
+
+.ant-table-tbody > tr > td {
+	@apply border-b-0 !important;
+}
+.ant-table-tbody > tr > td {
+	box-shadow: inset 0px -1px 0px #d8deda !important;
+}
+
+.ant-tabs-tab {
+	@apply bg-neutral-0  py-6 w-44 justify-center font-bold text-base !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+	@apply text-neutral-80 text-shadow-none !important;
+}
+
+.ant-tabs-ink-bar {
+	@apply h-[6px] bg-action-primary !important;
+}
+
+.ant-tabs-tab:hover,
+.ant-tabs-tab-btn:hover,
+.ant-tabs-tab-remove:hover,
+.ant-tabs-tab-btn:focus,
+.ant-tabs-tab-remove:focus,
+.ant-tabs-tab-btn:active,
+.ant-tabs-tab-remove:active {
+	@apply text-neutral-80 !important;
+}
+
+.ant-tabs-top > .ant-tabs-nav {
+	@apply m-0 !important;
+}
