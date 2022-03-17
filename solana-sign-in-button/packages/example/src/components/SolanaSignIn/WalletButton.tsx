@@ -51,7 +51,7 @@ export const WalletButton = (props: Props) => {
       <Button
         type="default"
         onClick={() => setDropdownVisible(!dropdownVisible)}
-        icon={<WalletIcon wallet={wallet} className="w-6" />}
+        icon={<WalletIcon wallet={wallet} className="w-6" style={{ marginRight: 10 }}/>}
       >
         {address}
       </Button>
