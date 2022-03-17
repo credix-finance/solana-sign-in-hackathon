@@ -39,8 +39,8 @@
 # yarn NOT using Zero Install
 /**/.pnp.*
 /**/.yarn/*
-/**/!.yarn/patches
-/**/!.yarn/plugins
-/**/!.yarn/releases
-/**/!.yarn/sdks
-/**/!.yarn/versions
+!/**/.yarn/patches
+!/**/.yarn/plugins
+!/**/.yarn/releases
+!/**/.yarn/sdks
+!/**/.yarn/versions
