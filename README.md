@@ -25,7 +25,7 @@ Copy this secret in the `solana-sign-in-backend` and `solana-sign-in-bff` folder
 ### Backend
 
 Go to the `solana-sign-in-backend` directory and run the backend.
-This backend will be a small example on how to for example make a one-to-many relation between public keys and users.
+This backend will be a small example on how to for example make a one-to-many relation between a user and public keys.
 
 ```sh
 ./mvnw mn:run
