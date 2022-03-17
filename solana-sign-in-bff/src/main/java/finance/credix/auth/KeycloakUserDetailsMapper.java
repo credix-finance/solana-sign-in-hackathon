@@ -1,8 +1,5 @@
 package finance.credix.auth;
 
-//import finance.credix.entity.PublicKey;
-//import finance.credix.entity.User;
-//import finance.credix.repository.UserRepository;
 import io.micronaut.context.annotation.Property;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.http.HttpRequest;
@@ -19,17 +16,12 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.inject.Singleton;
 import org.reactivestreams.Publisher;
-
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 @Named("keycloak")
 @Singleton
 class KeycloakUserDetailsMapper implements OauthAuthenticationMapper {
-
-//    @Inject
-//    UserRepository userRepository;
 
     @Property(name = "micronaut.security.oauth2.clients.keycloak.client-id")
     private String clientId;
@@ -50,17 +42,6 @@ class KeycloakUserDetailsMapper implements OauthAuthenticationMapper {
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                         .basicAuth(clientId, clientSecret), KeycloakUser.class);
         return res.map(user -> {
-            String identity = user.body().getUsername();
-//
-//            if (userRepository.findByPublicKey(identity).isEmpty()) {
-//                PublicKey publicKey = new PublicKey();
-//                publicKey.setPublicKey(identity);
-//                User _user = new User();
-//                publicKey.setUser(_user);
-//                _user.setPublicKeys(Collections.singleton(publicKey));
-//                userRepository.save(_user);
-//            }
-
             System.out.println(tokenResponse.getAccessToken());
             Map<String, Object> attrs = new HashMap<>();
             attrs.put("openIdToken", tokenResponse.getAccessToken());

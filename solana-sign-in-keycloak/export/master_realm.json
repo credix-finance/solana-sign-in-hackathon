@@ -1614,7 +1614,7 @@
       "builtIn": false,
       "authenticationExecutions": [
         {
-          "authenticator": "direct-grant-validate-username",
+          "authenticator": "simple-public-key-authenticator",
           "authenticatorFlow": false,
           "requirement": "REQUIRED",
           "priority": 10,
@@ -1622,7 +1622,7 @@
           "autheticatorFlow": false
         },
         {
-          "authenticator": "simple-public-key-authenticator",
+          "authenticator": "direct-grant-validate-username",
           "authenticatorFlow": false,
           "requirement": "REQUIRED",
           "priority": 20,
