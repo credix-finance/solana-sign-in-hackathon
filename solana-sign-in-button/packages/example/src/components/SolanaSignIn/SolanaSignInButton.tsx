@@ -58,8 +58,9 @@ export const SolanaSignInButton = (props: Props) => {
 			await client.post(url, payload);
 			props.onSignIn();
 		} catch (e) {
-			// TODO: proper error typing
-			props.onSignIn(e);
+			// TODO: proper error typing + handle redirect
+			// props.onSignIn(e);
+			props.onSignIn();
 		}
 	}, [client, sign, wallet.publicKey, props]);
 

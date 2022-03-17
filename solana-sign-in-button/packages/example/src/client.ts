@@ -3,11 +3,12 @@ import { dbPublicKey, User } from "state";
 
 export const baseURL = "http://127.0.0.1";
 export const bffClient = axios.create({
-	baseURL: `${baseURL}:8081`,
+	baseURL: `${baseURL}:8082`,
 	withCredentials: true,
 });
 export const backendClient = axios.create({
-	baseURL: `${baseURL}:8082`,
+	baseURL: `${baseURL}:8081`,
+	withCredentials: true
 });
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -42,7 +43,9 @@ export const updateUser = async (user: Partial<User>, errorHandler: any) => {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const addPublickey = async (key: dbPublicKey, errorHandler: any) => {
 	try {
-		const response = await backendClient.post("/api/publickeys", key);
+		const response = await backendClient.post("/api/publickeys", {
+			publicKey: key.publicKey.toLowerCase()
+		});
 		return response.data;
 	} catch (e) {
 		errorHandler(e);
@@ -54,5 +57,7 @@ export const errorHandler = (onUnauthorized: () => void) => (e: Error | AxiosErr
 		onUnauthorized();
 	}
 
-	throw e;
+	// TODO: throw exception
+	console.log(e);
+	// throw e;
 };

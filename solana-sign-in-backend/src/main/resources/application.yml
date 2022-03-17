@@ -20,7 +20,7 @@ micronaut:
     oauth2.clients.keycloak:
       grant-type: password
       client-id: micronaut
-      client-secret: 4IQPcqoqKcR4kp1t3h5i8AohZnHkNubH
+      client-secret: PeAOtYEtMHUzvgw7pxkY5tquKD4XSK0W
       authorization:
         url: http://127.0.0.1:8080/auth/realms/master/protocol/openid-connect/auth
 custom:
